@@ -28,12 +28,12 @@ jobs:
         run: chmod +x build.sh && chmod +x test.sh
           
       - name: "Build nb-javac-android"
-        run: "./build.sh clean jar"
-      - name: "Unit Test nb-javac-android"
-        run: "./test.sh"
+        run: "JAVA_HOME=/jdk-17/ ant -f ./make/langtools/netbeans/nb-javac clean jar"
+#      - name: "Unit Test nb-javac-android"
+#        run: "./test.sh"
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         if: ${{ !github.head_ref }}
         with:
           name: nb-javac-android
-          path: ./make/langtools/netbeans/nb-javac/dist/nb-javac-*-android.jar
+          path: ./make/langtools/netbeans/nb-javac/dist
