@@ -27,8 +27,8 @@ jobs:
       - name: Grant execute permission
         run: chmod +x build.sh && chmod +x test.sh
           
-#      - name: "Build nb-javac-android"
-#        run: "./build.sh clean jar"
+      - name: "Build nb-javac-android"
+        run: "./build.sh clean jar"
       - name: "Unit Test nb-javac-android"
         run: "./test.sh"
       - name: Upload JAR
