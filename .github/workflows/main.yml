@@ -22,6 +22,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+
+      - name: Grant execute permission for build.sh
+        run: chmod +x build.sh
+          
       - name: "Build nb-javac-android"
         run: "./build.sh clean jar"
       - name: "Unit Test nb-javac-android"
