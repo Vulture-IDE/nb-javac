@@ -28,7 +28,7 @@ jobs:
         run: chmod +x build.sh && chmod +x test.sh
           
       - name: "Build nb-javac-android"
-        run: "JAVA_HOME=/jdk-17/ ant -f ./make/langtools/netbeans/nb-javac clean jar"
+        run: "ant -f ./make/langtools/netbeans/nb-javac clean jar"
 #      - name: "Unit Test nb-javac-android"
 #        run: "./test.sh"
       - name: Upload JAR
